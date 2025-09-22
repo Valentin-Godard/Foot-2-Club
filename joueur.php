@@ -1,3 +1,4 @@
+
 <?php 
 
 class joueur{
@@ -20,5 +21,4 @@ class joueur{
     public function setPrenom($prenom) :void{
         $this->prenom = $prenom ;
     }
-
 }
