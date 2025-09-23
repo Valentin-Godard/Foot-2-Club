@@ -14,7 +14,7 @@ class staff{
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->image = $image;
-        $this->role = $role;
+        $this->image = $image;
     }
 
     public function getPrenom(): string {
@@ -34,19 +34,19 @@ class staff{
     }
 
     public function getAnniversaire(): string {
-        return $this->image;
+        return $this->anniversaire;
     }
 
-    public function setAnniversaire(string $image): void {
-        $this->image = $image;
+    public function setAnniversaire(string $anniversaire): void {
+        $this->anniversaire = $anniversaire;
     }
 
     public function getImage(): string {
-        return $this->role;
+        return $this->image;
     }
 
-    public function setImage(string $role): void {
-        $this->role = $role;
+    public function setImage(string $image): void {
+        $this->image = $image;
     }
 
 }

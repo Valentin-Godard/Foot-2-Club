@@ -37,16 +37,16 @@ class staff{
         return $this->image;
     }
 
-    public function setAnniversaire(string $image): void {
-        $this->image = $image;
+    public function setAnniversaire(string $anniversaire): void {
+        $this->image = $anniversaire;
     }
 
     public function getImage(): string {
-        return $this->role;
+        return $this->image;
     }
 
-    public function setImage(string $role): void {
-        $this->role = $role;
+    public function setImage(string $image): void {
+        $this->image = $image;
     }
 
 }

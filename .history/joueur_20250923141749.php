@@ -49,4 +49,3 @@ class joueur{
         $this->image = $image;
     }
 }
-

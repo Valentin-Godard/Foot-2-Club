@@ -42,11 +42,11 @@ class staff{
     }
 
     public function getImage(): string {
-        return $this->role;
+        return $this->image;
     }
 
-    public function setImage(string $role): void {
-        $this->role = $role;
+    public function setImage(string $): void {
+        $this->image = $image;
     }
 
 }

@@ -41,6 +41,7 @@ class joueur{
         $this->birthdate = $birthdate;
     }
 
+    // Getter et Setter pour image
     public function getImage(): string {
         return $this->image;
     }
@@ -49,4 +50,3 @@ class joueur{
         $this->image = $image;
     }
 }
-
