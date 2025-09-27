@@ -30,7 +30,7 @@ class equipe{
         ];
     }
 
-    public function ajouterMatch(matchFoot $match): void {
+    public function ajouterMatch(atchFoot $match): void {
         $this->matchs[] = $match;
     }
 

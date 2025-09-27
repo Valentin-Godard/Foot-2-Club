@@ -1,5 +1,5 @@
 <?php
-require_once "joueur.php";
+require_once "Joueur.php";
 require_once "includes/database.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

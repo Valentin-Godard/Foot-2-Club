@@ -7,8 +7,6 @@ require_once "joueur.php";
 class equipe{
     
     private string $nom;
-    private array $joueurs = []; // tableau de joueurs
-    private array $matchs = [];  // tableau de matchs
 
     public function __construct(string $nom) {
         $this->nom = $nom;
@@ -23,20 +21,20 @@ class equipe{
         $this->nom;
     }
 
-    public function ajouterJoueur(joueur $joueur, string $role) {
+    public function ajouterJoueur(Joueur $joueur, string $role) {
         $this->joueurs[] = [
             "joueur" => $joueur,
             "role" => $role
         ];
     }
 
-    public function ajouterMatch(matchFoot $match): void {
+    public function ajouterMatch(Match $match) {
         $this->matchs[] = $match;
     }
 
     public function getJoueurs(): array {
         return $this->joueurs;
     }
-
+    
 }
 

@@ -1,6 +1,9 @@
 <?php
 
-class equipe {
+require_once "equipe.php";
+require_once "clubOppose.php";
+
+class matchFoot {
 
     private string $equipe1Score;
 
