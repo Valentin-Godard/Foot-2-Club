@@ -13,19 +13,10 @@ class joueur{
         $this->birthdate = $birthdate;
         $this->image= $image;
 
+        $this->saveToDatabase();
     }
 
     //https://www.php.net/manual/fr/pdostatement.execute.php
-    public function save(): void {
-        global $pdo;
-        $stmt = $pdo->prepare("INSERT INTO joueurs (nom, prenom, date_naissance, photo) VALUES (?, ?, ?, ?)");
-        $stmt->execute([
-            $this->nom,
-            $this->prenom,
-            $this->birthdate->format("Y-m-d"),
-            $this->image
-        ]);
-    }
 
     // Getter et Setter pour prénom
     public function getPrenom(): string {

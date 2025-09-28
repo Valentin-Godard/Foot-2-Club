@@ -13,6 +13,7 @@ class joueur{
         $this->birthdate = $birthdate;
         $this->image= $image;
 
+        $this->saveToDatabase();
     }
 
     //https://www.php.net/manual/fr/pdostatement.execute.php
