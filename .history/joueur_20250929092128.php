@@ -1,7 +1,7 @@
 
 <?php 
 
-class Joueur{
+class oueur{
     private string $prenom;
     private string $nom;
     private DateTime $birthdate;
