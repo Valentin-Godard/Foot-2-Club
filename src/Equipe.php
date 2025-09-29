@@ -1,8 +1,8 @@
 <?php
 
 
-require_once "Match.php";
-require_once "Joueur.php";
+use MatchFoot;
+use Joueur;
 
 class Equipe{
     
@@ -23,7 +23,7 @@ class Equipe{
         $this->nom;
     }
 
-    public function ajouterJoueur(joueur $joueur, string $role) {
+    public function ajouterJoueur(Joueur $joueur, string $role) {
         $this->joueurs[] = [
             "joueur" => $joueur,
             "role" => $role

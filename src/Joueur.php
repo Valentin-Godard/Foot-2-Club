@@ -1,6 +1,9 @@
 
 <?php 
 
+use App\Trait\Image;
+use App\Enum\Role;
+
 class Joueur{
     private string $prenom;
     private string $nom;
