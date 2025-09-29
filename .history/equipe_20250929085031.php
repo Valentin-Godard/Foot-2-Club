@@ -45,4 +45,4 @@ $equipe1 = new Equipe("PSG");
 $equipe1->ajouterJoueur($j1, "Attaquant");
 $equipe1->ajouterJoueur($j2, "Milieu");
 $equipe1->ajouterJoueur($j3, "Ailier");
-*/
+

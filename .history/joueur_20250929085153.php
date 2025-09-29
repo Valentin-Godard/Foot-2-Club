@@ -67,4 +67,4 @@ class joueur{
 $j1 = new Joueur("Kylian", "Mbappé", new DateTime("1998-12-20"), "mbappe.jpg");
 $j2 = new Joueur("Antoine", "Griezmann", new DateTime("1991-03-21"), "griezmann.jpg");
 $j3 = new Joueur("Ousmane", "Dembélé", new DateTime("1997-05-15"), "dembele.jpg");
-*/
+*/f

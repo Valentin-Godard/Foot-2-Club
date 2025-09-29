@@ -30,6 +30,5 @@ class clubOppose{
     }
 }
 
-/*
+
 $real = new ClubOppose("Santiago Bernabeu", "Madrid");
-*/
