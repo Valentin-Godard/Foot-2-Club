@@ -1,8 +1,8 @@
 <?php
 
 
-require_once "Match.php";
-require_once "Joueur.php";
+require_once "atch.php";
+require_once "joueur.php";
 
 class Equipe{
     

@@ -1,5 +1,5 @@
 <?php
-require_once "Joueur.php";
+require_once "oueur.php";
 require_once "includes/database.php";
 require_once "includes/header.php";
 

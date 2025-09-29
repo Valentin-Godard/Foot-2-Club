@@ -2,7 +2,7 @@
 
 
 require_once "Match.php";
-require_once "Joueur.php";
+require_once "joueur.php";
 
 class Equipe{
     
