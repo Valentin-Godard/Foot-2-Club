@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Bienvenue sur la page d'accueil</h1>
-    <p>Vous êtes connecté en tant que : <?php echo $_COOKIE['email']; ?></p>
+    <p>Vous êtes connecté en tant que : <?php echo $_COOKIE['username']; ?></p>
     <a href="deconnexion.php">Se déconnecter</a>
 </body>
 </html>
