@@ -1,7 +1,7 @@
 <?php
 require_once "joueur.php";
 require_once "includes/database.php";
-require_once "includes/header.php";
+require_once "includes/database.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST["nom"];
