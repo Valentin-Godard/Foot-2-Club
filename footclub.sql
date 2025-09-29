@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 22 sep. 2025 à 10:36
+-- Généré le : lun. 29 sep. 2025 à 09:24
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -33,6 +33,14 @@ CREATE TABLE `club_adverse` (
   `ville` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `club_adverse`
+--
+
+INSERT INTO `club_adverse` (`id`, `adresse`, `ville`) VALUES
+(1, 'Rue du commerçant ', 'Saint-Cyr '),
+(2, 'Rue de la fontaine', 'Fontaineau');
+
 -- --------------------------------------------------------
 
 --
@@ -43,6 +51,14 @@ CREATE TABLE `equipe` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `equipe`
+--
+
+INSERT INTO `equipe` (`id`, `nom`) VALUES
+(1, 'FC Barcelone'),
+(2, 'Real Madrid CF');
 
 -- --------------------------------------------------------
 
@@ -58,6 +74,14 @@ CREATE TABLE `joueur` (
   `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `joueur`
+--
+
+INSERT INTO `joueur` (`id`, `prenom`, `nom`, `date_de_naissance`, `photo`) VALUES
+(1, 'Redwane', 'Koua', '2004-11-09', 'test'),
+(2, 'Valentin', 'Gogo', '2006-09-01', 'va');
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +93,16 @@ CREATE TABLE `joueur_ayant_equipe` (
   `equipe_id` int(11) NOT NULL,
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `joueur_ayant_equipe`
+--
+
+INSERT INTO `joueur_ayant_equipe` (`joueur_id`, `equipe_id`, `role`) VALUES
+(1, 1, 'Défenseur Gauche'),
+(2, 2, 'Buteur'),
+(1, 1, 'Défenseur Gauche'),
+(2, 2, 'Buteur');
 
 -- --------------------------------------------------------
 
@@ -86,6 +120,16 @@ CREATE TABLE `match` (
   `clup_adv_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `match`
+--
+
+INSERT INTO `match` (`id`, `score_equipe`, `score_equipe_adv`, `date`, `equipe_id`, `ville`, `clup_adv_id`) VALUES
+(1, 4, 0, '2025-09-26 17:10:52', 1, 'Barcelone', 1),
+(2, 0, 4, '2025-09-26 17:10:52', 2, 'Madrid', 2),
+(3, 4, 0, '2025-09-26 17:10:52', 1, 'Barcelone', 1),
+(4, 0, 4, '2025-09-26 17:10:52', 2, 'Madrid', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -99,6 +143,38 @@ CREATE TABLE `membre_du_staff` (
   `image` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `membre_du_staff`
+--
+
+INSERT INTO `membre_du_staff` (`id`, `prenom`, `nom`, `image`, `role`) VALUES
+(1, 'zinedine', 'zidane', '...', 'Entraineur'),
+(2, 'diego', 'simeone', '...', 'entraineur');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `mdp`) VALUES
+(1, 'Redwane', 'redo@redo.fr', '123456'),
+(4, 'Messi', 'messi@best.fr', '$2y$10$BBUPHlvrVM04j2zdu08f..ZYhaT7xhzADL4QL55i1ABl75dJ9woG6'),
+(5, 'Messi', 'messi@best.fr', '$2y$10$naUGLG56aa610kyiPIE0h.b7R4FVLChh3BnUeuNjZJb9ewRWBrXJq'),
+(6, 'vltn', 'vltn@goat.fr', '$2y$10$sPty/ZugA.AGnl1naKMV2..po9HXLeGoCPuTHLIFu74pQw7.2YU4O'),
+(7, 'moi', 'moi@moi', '$2y$10$M/I2PFlzf2ToEzfbZJt1k.KbzE35nuthSwEU4NecsZWVsbjWJcBdC');
 
 --
 -- Index pour les tables déchargées
@@ -144,6 +220,12 @@ ALTER TABLE `membre_du_staff`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -151,31 +233,37 @@ ALTER TABLE `membre_du_staff`
 -- AUTO_INCREMENT pour la table `club_adverse`
 --
 ALTER TABLE `club_adverse`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `joueur`
 --
 ALTER TABLE `joueur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `match`
 --
 ALTER TABLE `match`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `membre_du_staff`
 --
 ALTER TABLE `membre_du_staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Contraintes pour les tables déchargées
