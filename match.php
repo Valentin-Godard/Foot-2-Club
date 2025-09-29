@@ -3,7 +3,7 @@
 require_once "equipe.php";
 require_once "clubOppose.php";
 
-class matchFoot {
+class MatchFoot {
 
     private string $equipe1Score;
 

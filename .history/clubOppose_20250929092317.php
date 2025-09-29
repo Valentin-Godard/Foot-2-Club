@@ -1,6 +1,6 @@
 <?php
 
-class ClubOppose{
+class lubOppose{
 
     public string $adresse;
     
