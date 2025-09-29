@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
     $dateNaissance = new DateTime($_POST["date_naissance"]);
-    $photo = $_FILES["photo"]["name"]; 
+    $photo = $_FILES["photo"]["name"]; // on récupère juste le nom du fichier pour l’instant
 
     // Création de l’objet joueur
     $joueur = new Joueur($nom, $prenom, $dateNaissance, $photo);
