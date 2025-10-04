@@ -1,33 +1,42 @@
 
 <?php 
 
+namespace App;
+
+use App\Contract\Savable;
 use App\Trait\Image;
 use App\Enum\Role;
+use DateTime;
+use PDO;
 
-class Joueur{
+class Joueur implements Savable {
+    use Image;
+
+    private ?int $id;
     private string $prenom;
     private string $nom;
     private DateTime $birthdate;
-    private string $image;
-    
-    public function __construct(string  $prenom, string $nom, DateTime $birthdate, string $image  ) {
+    private Role $role;
+
+    public function __construct(?int $id, string $prenom, string $nom, DateTime $birthdate, Role $role, string $image) {
+        $this->id = $id;
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->birthdate = $birthdate;
-        $this->image= $image;
-
+        $this->role = $role;
+        $this->setImage($image);
     }
 
     //suivre : https://www.php.net/manual/fr/pdostatement.execute.php
-    public function save(): void {
-        global $pdo;
-        $stmt = $pdo->prepare("INSERT INTO joueurs (nom, prenom, date_naissance, photo) VALUES (?, ?, ?, ?)");
-        $stmt->execute([
-            $this->nom,
-            $this->prenom,
-            $this->birthdate->format("Y-m-d"),
-            $this->image
-        ]);
+    public function save(PDO $pdo): void {
+        if ($this->id === null) {
+            $stmt = $pdo->prepare("INSERT INTO joueurs (nom, prenom, date_naissance, photo, role) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$this->nom, $this->prenom, $this->birthdate->format("Y-m-d"), $this->getImage(), $this->role->value]);
+            $this->id = $pdo->lastInsertId();
+        } else {
+            $stmt = $pdo->prepare("UPDATE joueurs SET nom=?, prenom=?, date_naissance=?, photo=?, role=? WHERE id=?");
+            $stmt->execute([$this->nom, $this->prenom, $this->birthdate->format("Y-m-d"), $this->getImage(), $this->role->value, $this->id]);
+        }
     }
 
     // Getter et Setter pour prénom
