@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $photo = $_FILES["photo"]["name"]; 
 
     // Création de l’objet joueur
-    $joueur = new Joueur($non, $prenom, $nom, $dateNaissance, Role::, $photo);
+    $joueur = new Joueur(null, $prenom, $nom, $dateNaissance, Role::tryFrom($joueur), $photo);
 
     $stmt = $pdo->prepare("INSERT INTO joueur (nom, prenom, date_naissance, photo) VALUES (?, ?, ?, ?)");
     $stmt->execute([

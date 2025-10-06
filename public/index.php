@@ -1,10 +1,12 @@
 <?php 
 
-require_once "Equipe.php";
-require_once "Joueur.php";
-require_once "ClubOppose.php";
-require_once "Match.php";
-require_once "JoueurDansEquipe.php";
+use App\Contract\Savable;
+use App\trait\Image;
+use App\Joueur;
+use App\Enum\Role;
+use DateTime;
+use PDO;
+
 // Création des joueurs
 $j1 = new Joueur("Kylian", "Mbappé", new DateTime("2000-12-20"), "mbappe.jpg");
 $j2 = new Joueur("Lionel", "Messi", new DateTime("1987-06-24"), "messi.jpg");
