@@ -2,7 +2,7 @@
 
 
 use MatchFoot;
-use Joueur;
+use App\trait\Joueur;
 
 class Equipe{
     

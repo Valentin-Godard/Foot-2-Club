@@ -1,7 +1,12 @@
 <?php
-require_once "Joueur.php";
-require_once "includes/database.php";
-require_once "includes/header.php";
+
+use App\Contract\Savable;
+use App\trait\Image;
+use App\Joueur;
+use App\Enum\Role;
+use DateTime;
+use PDO;
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = $_POST["nom"];
@@ -10,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $photo = $_FILES["photo"]["name"]; 
 
     // Création de l’objet joueur
-    $joueur = new Joueur($nom, $prenom, $dateNaissance, $photo);
+    $joueur = new Joueur($non, $prenom, $nom, $dateNaissance, Role::, $photo);
 
     $stmt = $pdo->prepare("INSERT INTO joueur (nom, prenom, date_naissance, photo) VALUES (?, ?, ?, ?)");
     $stmt->execute([
