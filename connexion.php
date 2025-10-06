@@ -59,6 +59,5 @@
         echo "<p style='color:red;'>$error_msg</p>";
     }
     ?>
-
 </body>
 </html>
