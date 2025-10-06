@@ -1,7 +1,7 @@
 <?php 
 
 use App\Contract\Savable;
-use App\trait\Image;
+use App\Trait\Image;
 use App\Joueur;
 use App\Enum\Role;
 use DateTime;
