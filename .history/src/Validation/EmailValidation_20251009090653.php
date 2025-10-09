@@ -15,6 +15,7 @@ class EmailValidation {
      * @return bool
      */
     public function isValid(?string $email): bool {
+        // Vérifie si le champ est vide
         if (empty($email)) {
             $this->errorMessage = "L'adresse email ne peut pas être vide.";
             return false;

@@ -52,7 +52,7 @@ class MatchFoot {
         return $this->city;
     }
 
-    public function setVille(string $city): void {
+    public function setCity(string $city): void {
         $this->city = $city;
     }
 }

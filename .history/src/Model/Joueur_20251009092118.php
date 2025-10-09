@@ -80,7 +80,7 @@ class Joueur implements Savable {
 
     public function setRole(Role $role): void {
         $this->role = $role;
-    }
+}
 
 }
 

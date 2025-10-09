@@ -73,15 +73,6 @@ class Joueur implements Savable {
     public function setImage(string $image): void {
         $this->image = $image;
     }
-
-    public function getRole(): Role {
-        return $this->role;
-    }
-
-    public function setRole(Role $role): void {
-        $this->role = $role;
-    }
-
 }
 
 /*

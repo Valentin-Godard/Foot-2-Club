@@ -75,12 +75,12 @@ class Joueur implements Savable {
     }
 
     public function getRole(): Role {
-        return $this->role;
-    }
+    return $this->role;
+}
 
     public function setRole(Role $role): void {
-        $this->role = $role;
-    }
+    $this->role = $role;
+}
 
 }
 

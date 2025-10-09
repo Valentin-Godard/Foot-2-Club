@@ -1,7 +1,7 @@
 <?php
-namespace App\Model;
+namespace App\Database;
 
-use App\Model\Equipe;
+use App\Mode\Equipe;
 use PDO;
 
 class EquipeDatabase {

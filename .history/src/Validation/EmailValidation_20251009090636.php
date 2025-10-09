@@ -15,12 +15,13 @@ class EmailValidation {
      * @return bool
      */
     public function isValid(?string $email): bool {
+        // Vérifie si le champ est vide
         if (empty($email)) {
             $this->errorMessage = "L'adresse email ne peut pas être vide.";
             return false;
         }
 
-        // format valide ou pas
+        // Vérifie si le format est valide
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->errorMessage = "Format d'adresse email invalide.";
             return false;

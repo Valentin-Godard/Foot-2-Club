@@ -20,8 +20,8 @@ class MatchDatabase {
         $stmt->execute([
             $match->getDate()->format("Y-m-d"),
             $match->getVille(),
-            $match->getEquipe1Score(),
-            $match->getEquipe2Score(),
+            $match->getScoreEquipe(),
+            $match->getScoreAdverse(),
             $match->getEquipeId(),
             $match->getAdversaireId()
         ]);

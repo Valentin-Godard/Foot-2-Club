@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use App\Model\MatchFoot;
+use AMatchFoot;
 use App\Model\Joueur;
 
 class Equipe{

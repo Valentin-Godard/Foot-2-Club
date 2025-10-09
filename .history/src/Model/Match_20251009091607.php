@@ -3,8 +3,8 @@
 namespace App\Model;
 
 use DateTime;
-use App\Model\Equipe;
-use App\Model\ClubOppose;
+require_once "equipe.php";
+require_once "clubOppose.php";
 
 class MatchFoot {
 
@@ -48,11 +48,11 @@ class MatchFoot {
         $this->date = $date;
     }
 
-    public function getVille(): string {
+    public function getCity(): string {
         return $this->city;
     }
 
-    public function setVille(string $city): void {
+    public function setCity(string $city): void {
         $this->city = $city;
     }
 }

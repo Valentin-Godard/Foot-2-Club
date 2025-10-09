@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Model;
 
-use App\Model\MatchFoot;
-use App\Model\Joueur;
+use MatchFoot;
+use App\Joueur;
 
 class Equipe{
     

@@ -1,7 +1,5 @@
 <?php
 
-namespace App\Model;
-
 class Staff{
 
     public string $prenom;

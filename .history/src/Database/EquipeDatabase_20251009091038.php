@@ -1,5 +1,5 @@
 <?php
-namespace App\Model;
+namespace App\Mo;
 
 use App\Model\Equipe;
 use PDO;
